@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="VideoListAdapterBinding"/>
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/margin_xsmall">
+
+    <FrameLayout
+        android:id="@+id/vid_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_12655"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+
+            <com.google.android.youtube.player.YouTubeThumbnailView
+                android:id="@+id/youtube_thumbnail"
+                android:layout_width="@dimen/youtube_thumbnail_width"
+                android:layout_height="@dimen/youtube_thumbnail_height"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/share_btn"
+                android:layout_width="@dimen/video_item_share_size"
+                android:layout_height="@dimen/video_item_share_size"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/padding_megalarge"
+                android:layout_marginTop="@dimen/margin"
+                android:src="@drawable/ic_share_white_24dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/btn_play"
+                android:layout_width="@dimen/video_item_image_size"
+                android:layout_height="@dimen/video_item_image_size"
+                android:layout_gravity="center" />
+
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+</RelativeLayout>
+
+</layout>

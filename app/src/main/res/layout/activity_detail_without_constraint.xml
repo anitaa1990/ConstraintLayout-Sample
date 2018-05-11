@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DetailWithoutConstraintActivityBinding">
+
+        <variable
+            name="movie"
+            type="com.an.constraintlayout.model.Movie" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity_detail"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <FrameLayout
+                        android:id="@+id/layout_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/activity_detail_image_frame_height"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                    </FrameLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_detail_image_frame_margin_top">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="@dimen/margin_large" />
+
+                        <FrameLayout
+                            android:id="@+id/movie_detail_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/recyclerView"
+                            android:layout_marginBottom="@dimen/margin_large">
+
+
+                            <LinearLayout
+
+                                android:id="@+id/layout_second"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/recyclerView"
+                                android:layout_marginBottom="@dimen/margin"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:orientation="horizontal">
+
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/margin_xxxxlarge"
+                                    android:layout_weight="0."
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:layout_marginRight="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                                <View
+                                    android:layout_width="@dimen/activity_detail_circle_size"
+                                    android:layout_height="@dimen/activity_detail_circle_size"
+                                    android:layout_gravity="right"
+                                    android:layout_marginLeft="@dimen/padding_megalarge"
+                                    android:background="@drawable/circle" />
+
+                            </LinearLayout>
+
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/movie_detail_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_large"
+                                android:layout_marginRight="@dimen/margin_large"
+                                android:layout_marginTop="20dp"
+                                app:cardBackgroundColor="@android:color/white"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="0dp"
+                                app:cardPreventCornerOverlap="false">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_large"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="@dimen/padding_medium"
+                                    android:paddingTop="@dimen/padding_large">
+
+                                    <com.an.customfontview.CustomTextView
+                                        android:id="@+id/movie_title"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_large"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:paddingBottom="@dimen/padding"
+                                        android:text="@{movie.title}"
+                                        android:textColor="@color/bg_activity_detail"
+                                        android:textSize="@dimen/font_x_medium_large"
+                                        app:textFontPath="fonts/gt_medium.otf" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin"
+                                        android:layout_marginRight="@dimen/margin"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/layout_imdb"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_imdb"
+                                            android:orientation="horizontal"
+                                            android:paddingBottom="2dp"
+                                            android:paddingLeft="@dimen/padding_small"
+                                            android:paddingRight="@dimen/padding_small"
+                                            android:paddingTop="2dp">
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:adjustViewBounds="true"
+                                                android:src="@drawable/ic_imdb" />
+
+                                            <com.an.customfontview.CustomTextView
+                                                android:id="@+id/imdbRating"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_vertical"
+                                                android:drawableLeft="@drawable/ic_star"
+                                                android:drawablePadding="@dimen/padding_small"
+                                                android:gravity="center_vertical"
+                                                android:paddingTop="2dp"
+                                                android:textColor="@android:color/white"
+                                                android:textSize="@dimen/font_xsmall"
+                                                app:textFontPath="fonts/gt_medium.otf" />
+
+
+                                        </LinearLayout>
+
+                                        <com.an.constraintlayout.views.collectionpicker.CollectionPicker
+                                            android:id="@+id/collection_item_picker"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:layout_marginTop="3dp"
+                                            android:gravity="left"
+                                            android:orientation="horizontal"
+                                            android:paddingLeft="@dimen/margin_xlarge"
+                                            app:cp_itemBackgroundNormal="@color/blue"
+                                            app:cp_itemBackgroundPressed="@color/blue"
+                                            app:cp_simplified="true"
+                                            app:cp_textPaddingBottom="@dimen/padding_xsmall"
+                                            app:cp_textPaddingLeft="@dimen/margin_xsmall"
+                                            app:cp_textPaddingRight="@dimen/margin_xsmall"
+                                            app:cp_textPaddingTop="@dimen/padding_small" />
+
+
+                                    </LinearLayout>
+
+
+                                    <com.an.customfontview.CustomTextView
+                                        android:id="@+id/movie_desc"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_large"
+                                        android:layout_marginTop="@dimen/margin"
+                                        android:lineSpacingExtra="5dp"
+                                        android:paddingRight="@dimen/margin_xlarge"
+                                        android:text="@{movie.description}"
+                                        android:textColor="@color/text_desc_activity_detail"
+                                        android:textSize="@dimen/font_small_medium" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin"
+                                        android:orientation="horizontal"
+                                        android:paddingBottom="@dimen/margin">
+
+                                        <com.an.constraintlayout.views.collectionpicker.CollectionPicker
+                                            android:id="@+id/movie_status"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:gravity="left"
+                                            android:orientation="horizontal"
+                                            app:cp_itemBackgroundNormal="@color/light_blue"
+                                            app:cp_itemBackgroundPressed="@color/light_blue"
+                                            app:cp_simplified="true"
+                                            app:cp_textPaddingBottom="@dimen/margin_xsmall"
+                                            app:cp_textPaddingLeft="@dimen/margin_xsmall"
+                                            app:cp_textPaddingRight="@dimen/margin_xsmall"
+                                            app:cp_textPaddingTop="@dimen/padding_small" />
+
+
+                                        <com.an.customfontview.CustomTextView
+                                            android:id="@+id/txt_runtime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="@dimen/margin_large"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal"
+                                            android:textColor="@color/text_runtime_activity_detail"
+                                            android:textSize="@dimen/font_small"
+                                            app:textFontPath="fonts/gt_medium.otf" />
+
+                                    </LinearLayout>
+
+                                    <com.an.customfontview.CustomTextView
+                                        android:id="@+id/expand_button"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right|center_vertical"
+                                        android:layout_marginRight="@dimen/margin_large"
+                                        android:layout_marginTop="@dimen/margin_reverse"
+                                        android:autoLink="all"
+                                        android:gravity="right|center_vertical"
+                                        android:paddingBottom="@dimen/padding"
+                                        android:paddingLeft="@dimen/padding"
+                                        android:paddingRight="@dimen/padding"
+                                        android:text="@string/text_read_more"
+                                        android:textAllCaps="true"
+                                        android:textColor="@color/text_more_activity_detail"
+                                        android:textSize="@dimen/font_small"
+                                        app:textFontPath="fonts/gt_medium.otf" />
+
+                                    <com.an.customfontview.CustomTextView
+                                        android:id="@+id/download_btn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right|center_vertical"
+                                        android:layout_marginRight="@dimen/margin_large"
+                                        android:layout_marginTop="-10dp"
+                                        android:gravity="right|center_vertical"
+                                        android:paddingBottom="@dimen/padding"
+                                        android:paddingLeft="@dimen/padding"
+                                        android:paddingRight="@dimen/padding"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="@dimen/font_small_medium"
+                                        android:visibility="gone"
+                                        app:textFontPath="fonts/gt_medium.otf" />
+
+                                    <include
+                                        android:id="@+id/included_layout"
+                                        layout="@layout/detail_list_item_without_constraint" />
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <LinearLayout
+                                android:id="@+id/fav_view"
+                                android:layout_width="@dimen/design_fab_size_mini"
+                                android:layout_height="@dimen/design_fab_size_mini"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="@dimen/margin_xxxlarge"
+                                android:background="@drawable/ic_fav">
+
+                                <com.sackcentury.shinebuttonlib.ShineButton
+                                    android:id="@+id/shineButton"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin"
+                                    android:src="@android:color/white"
+                                    app:allow_random_color="false"
+                                    app:backgroundTint="@color/btn_shine"
+                                    app:big_shine_color="@color/btn_shine"
+                                    app:btn_color="@android:color/white"
+                                    app:btn_fill_color="@color/btn_shine_fill"
+                                    app:click_animation_duration="200"
+                                    app:enable_flashing="false"
+                                    app:shine_animation_duration="1500"
+                                    app:shine_count="10"
+                                    app:shine_turn_angle="10"
+                                    app:siShape="@raw/ic_heart"
+                                    app:small_shine_color="@color/btn_shine"
+                                    app:small_shine_offset_angle="20" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/detail_list_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/movie_detail_view"
+                            android:layout_gravity="bottom"
+                            android:layout_marginTop="@dimen/margin"
+                            android:orientation="vertical" />
+
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <include
+                    android:id="@+id/included_similar_layout"
+                    layout="@layout/similar_movie_list_without_constraint" />
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+</layout>
