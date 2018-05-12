@@ -108,5 +108,7 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
 Some of the articles I followed while implementing this can be found [here](https://medium.com/exploring-android/exploring-the-new-android-constraintlayout-eed37fe8d8f1) and [here](https://medium.com/@loutry/guide-to-constraintlayout-407cd87bc013) and [here](https://medium.com/@eugenebrusov/using-of-constraintlayout-to-set-your-imageview-in-16-9-ratio-9979d53ba976)
 
 
+<h2>Sample App</h2>
+<p><a href="https://play.google.com/store/apps/details?id=com.an.trailers"><img width="150" alt="Get it on Google Play" src="https://camo.githubusercontent.com/ccb26dee92ba45c411e669aae47dcc0706471af7/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f67622f6261646765732f696d616765732f67656e657269632f656e5f62616467655f7765625f67656e657269632e706e67" data-canonical-src="https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png" style="max-width:100%;"></a></p>
 
 
