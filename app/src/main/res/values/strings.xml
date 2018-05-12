@@ -7,4 +7,10 @@
     <string name="title_similar_movies">Similar Movies</string>
     <string name="title_cast">Cast</string>
     <string name="title_crew">Crew</string>
+
+    <string name="placeholder">Placeholder</string>s
+
+
+    <string name="btn_without_constraint">Checkout view implemented without using constraint layout</string>s
+    <string name="btn_with_constraint">Checkout view implemented using constraint layout</string>s
 </resources>

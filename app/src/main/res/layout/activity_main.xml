@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="MainActivityBinding" />
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin"
+    android:layout_marginRight="@dimen/margin">
+
+
+    <com.an.customfontview.CustomButton
+        android:id="@+id/btn_without_constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_without_constraint"
+        app:layout_constraintBottom_toTopOf="@+id/btn_with_constraint"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.an.customfontview.CustomButton
+        android:id="@+id/btn_with_constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_with_constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_without_constraint" />
+
+
+</android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -36,6 +36,8 @@
     <dimen name="margin_xxlarge">22dip</dimen>
     <dimen name="margin_xxxlarge">29dip</dimen>
     <dimen name="margin_xxxxlarge">30dip</dimen>
+    <dimen name="margin_xxxxxlarge">40dip</dimen>
+    <dimen name="margin_xxxxxxlarge">50dip</dimen>
 
     <dimen name="font_xxxxsmall">6sp</dimen>
     <dimen name="font_xxxsmall">8sp</dimen>
