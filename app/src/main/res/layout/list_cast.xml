@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_xxxlarge">
+
+        <com.an.constraintlayout.sample.views.expandablelayout.ExpandableLayout
+            android:id="@+id/expandable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:el_duration="1000"
+            app:el_expanded="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin"
+                android:orientation="vertical"
+                android:paddingRight="@dimen/padding">
+
+                <View
+                    android:id="@+id/line_above_cast_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:layout_marginRight="@dimen/padding"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@android:color/transparent" />
+
+
+                <com.an.customfontview.CustomTextView
+                    android:id="@+id/title_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:gravity="left"
+                    android:text="@string/title_cast"
+                    android:textAllCaps="true"
+                    android:textColor="@color/detail_list_item_text"
+                    android:textSize="@dimen/font_small_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line_above_cast_title"
+                    app:textFontPath="fonts/gt_medium.otf" />
+
+
+                <View
+                    android:id="@+id/line_below_cast_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/detail_list_item_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_cast" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cast_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line_below_cast_title" />
+
+
+                <View
+                    android:id="@+id/line_above_crew_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cast_list" />
+
+
+                <com.an.customfontview.CustomTextView
+                    android:id="@+id/title_crew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="@dimen/margin"
+                    android:gravity="left"
+                    android:text="@string/title_crew"
+                    android:textAllCaps="true"
+                    android:textColor="@color/detail_list_item_text"
+                    android:textSize="@dimen/font_small_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line_above_crew_title"
+                    app:textFontPath="fonts/gt_medium.otf" />
+
+
+                <View
+                    android:id="@+id/line_below_crew_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/detail_list_item_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_crew" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/crew_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line_below_crew_title" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@color/detail_list_item_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/crew_list" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.an.constraintlayout.sample.views.expandablelayout.ExpandableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

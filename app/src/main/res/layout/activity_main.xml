@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="MainActivityBinding">
+
+        <variable
+            name="movie"
+            type="com.an.constraintlayout.sample.model.Movie" />
+    </data>
+
+
+    <!--- Step 1: Add a nestedScrollView to the layout -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity_detail">
+
+
+        <!--- Step 2: Add a constraintLayout to the scrollView layout.
+              This is the only child of the nestedScrollView -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/margin_xlarge">
+
+
+            <!--- Step 3: We need to add an image banner to the view first.
+                  The image banner width should match the width of the screen.
+                  The image banner height should be 20% of the screen, without compromising on
+                  the aspect ratio of the image, i.e. the image should not be stretched
+                  or distorted in any way. -->
+            <ImageView
+                android:id="@+id/image_banner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="H,16:8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <!--- Step 4: The recyclerView would be defined with left & right constraints
+                  equal to the parent & the top and end constraints of the recyclerView
+                  would adhere to the Guideline we have defined.  -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_videos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_detail_image_frame_margin_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--- Step 5: The cardView would be defined next with width & height
+                  defined to wrap according to its content. It will have constraints
+                  such that it will be displayed below the RecyclerView and adhere
+                  left of the parent  -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/movie_detail_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_xxxlarge"
+                android:layout_marginRight="@dimen/margin_large"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_videos">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:paddingLeft="@dimen/padding_medium"
+                    android:paddingTop="@dimen/padding_large">
+
+
+                    <!--- Step 6: This will define the movie title. We set default
+                          constraints and ensure that the text gravity is horizontal -->
+                    <com.an.customfontview.CustomTextView
+                        android:id="@+id/movie_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingTop="@dimen/margin_large"
+                        android:paddingBottom="@dimen/padding"
+                        android:text="@{movie.title}"
+                        android:textColor="@color/bg_activity_detail"
+                        android:textSize="@dimen/font_x_medium_large"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textFontPath="fonts/gt_medium.otf" />
+
+
+                    <!--- Step 7: This will define the movie genres. We set default
+                          constraints and ensure that it is below the movie title -->
+                    <com.an.constraintlayout.sample.views.CollectionPicker
+                        android:id="@+id/collection_item_picker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin_xlarge"
+                        app:cp_itemBackgroundNormal="@color/blue"
+                        app:cp_itemBackgroundPressed="@color/blue"
+                        app:cp_simplified="true"
+                        app:cp_textPaddingBottom="@dimen/padding_xsmall"
+                        app:cp_textPaddingLeft="@dimen/padding_medium"
+                        app:cp_textPaddingRight="@dimen/padding_medium"
+                        app:cp_textPaddingTop="@dimen/padding_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/movie_title" />
+
+
+                    <!--- Step 8: This will define the movie description. Again we set
+                          default constraints and ensure that it is below the movie genres -->
+                    <com.an.customfontview.CustomTextView
+                        android:id="@+id/movie_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_medium"
+                        android:lineSpacingExtra="5dp"
+                        android:paddingTop="@dimen/margin"
+                        android:paddingRight="@dimen/margin_xlarge"
+                        android:paddingBottom="@dimen/margin_large"
+                        android:text="@{movie.description}"
+                        android:textColor="@color/text_desc_activity_detail"
+                        android:textSize="@dimen/font_small_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/collection_item_picker" />
+
+
+                    <!--- Step 9: This will define the movie status. Again we set
+                          default constraints and ensure that it is below the movie description -->
+                    <com.an.constraintlayout.sample.views.CollectionPicker
+                        android:id="@+id/movie_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_marginBottom="@dimen/margin"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        app:cp_itemBackgroundNormal="@color/light_blue"
+                        app:cp_itemBackgroundPressed="@color/light_blue"
+                        app:cp_simplified="true"
+                        app:cp_textPaddingBottom="@dimen/padding_xsmall"
+                        app:cp_textPaddingLeft="@dimen/padding_medium"
+                        app:cp_textPaddingRight="@dimen/padding_medium"
+                        app:cp_textPaddingTop="@dimen/padding_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/movie_desc" />
+
+
+                    <!--- Step 10: This will define the movie runtime. Again we set
+                          default constraints and ensure that it is below the movie description
+                          and make sure that it is displayed to the right of the movie
+                          status as well -->
+                    <com.an.customfontview.CustomTextView
+                        android:id="@+id/txt_runtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_large"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/margin"
+                        android:textColor="@color/text_runtime_activity_detail"
+                        android:textSize="@dimen/font_small"
+                        app:layout_constraintLeft_toRightOf="@+id/movie_status"
+                        app:layout_constraintTop_toBottomOf="@+id/movie_desc"
+                        app:textFontPath="fonts/gt_medium.otf" />
+
+
+                    <!--- Step 11: This will define the read more button.
+                          We set the default constraints and ensure that it is below
+                          the movie status -->
+                    <com.an.customfontview.CustomTextView
+                        android:id="@+id/expand_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:autoLink="all"
+                        android:gravity="right|center_vertical"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/padding"
+                        android:paddingBottom="@dimen/margin_xsmall"
+                        android:text="@string/text_read_more"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_more_activity_detail"
+                        android:textSize="@dimen/font_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_runtime"
+                        app:textFontPath="fonts/gt_medium.otf" />
+
+
+                    <!--- Step 12: I have defined a custom layout which expands when
+                          button is clicked and collapses when it is expanded.
+                          This is used to define the crew & cast details. The layout
+                          includes default constraints which ensure that it is below
+                          the read more button & aligns to the right of the parent view  -->
+                    <include
+                        android:id="@+id/included_layout"
+                        layout="@layout/list_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/expand_button" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--- Step 13: Now we define the favourite icon view. This needs to be
+                  displayed halfway from the cardView.  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fav_view"
+                android:layout_width="@dimen/design_fab_size_mini"
+                android:layout_height="@dimen/design_fab_size_mini"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@drawable/ic_fav"
+                app:layout_constraintRight_toRightOf="@+id/movie_detail_card"
+                app:layout_constraintTop_toBottomOf="@+id/list_videos"
+                app:layout_editor_absoluteX="310dp"
+                app:layout_editor_absoluteY="320dp">
+
+                <com.sackcentury.shinebuttonlib.ShineButton
+                    android:id="@+id/shineButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@android:color/white"
+                    app:allow_random_color="false"
+                    app:backgroundTint="@color/btn_shine"
+                    app:big_shine_color="@color/btn_shine"
+                    app:btn_color="@android:color/white"
+                    app:btn_fill_color="@color/btn_shine_fill"
+                    app:click_animation_duration="200"
+                    app:enable_flashing="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shine_animation_duration="1500"
+                    app:shine_count="10"
+                    app:shine_turn_angle="10"
+                    app:siShape="@raw/ic_heart"
+                    app:small_shine_color="@color/btn_shine"
+                    app:small_shine_offset_angle="20" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--- Step 14: This is another layout which defines the Similar movies
+                  section from the app. The layout includes constraints which ensure
+                  that it is below the cardView & it aligns to the left & right of the
+                  parent -->
+            <include
+                android:id="@+id/included_similar_layout"
+                layout="@layout/list_similar_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_detail_card" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

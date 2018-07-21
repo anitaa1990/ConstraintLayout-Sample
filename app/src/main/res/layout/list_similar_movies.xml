@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@android:color/transparent"
+        android:paddingBottom="@dimen/padding_large">
+
+
+        <com.an.customfontview.CustomTextView
+            android:id="@+id/movie_similar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:gravity="left"
+            android:text="@string/title_similar_movies"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textFontPath="fonts/gt_medium.otf" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movies_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_similar_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

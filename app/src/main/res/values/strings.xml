@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Tik Tik Trailers</string>
+    <string name="read_less">READ LESS</string>
+    <string name="read_more">READ MORE</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="empty_fav">No movies in the list</string>
+    <string name="empty_search">No movies found</string>
+    <string name="search_hint">Search...</string>
+    <string name="search_query_hint">Search Movies...</string>
+    <string name="movie_status_released">Released</string>
+    <string name="movie_runtime">%s mins</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="upcoming">upcoming</string>
+    <string name="now_playing">now_playing</string>
+    <string name="top_rated">top_rated</string>
+    <string name="dvd">dvd</string>
+    <string name="favourites">favourites</string>
+
+    <string name="download_first_txt">Click &#160;</string>
+    <string name="download_second_txt">here</string>
+    <string name="download_third_txt">&#160;to watch the full movie</string>
+
+
+    <string name="text_read_more">READ MORE</string>
+    <string name="title_similar_movies">Similar Movies</string>
+    <string name="title_cast">Cast</string>
+    <string name="title_crew">Crew</string>
+
+    <string name="placeholder">Placeholder</string>s
+
+</resources>

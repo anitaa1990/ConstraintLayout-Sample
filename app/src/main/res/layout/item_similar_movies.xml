@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="SimilarMoviesItemBinding" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/margin_large"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_detail_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="8dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="145dp"
+                android:layout_height="185dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
