@@ -31,12 +31,12 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
 
 <b>2. Some commonly used attributes in ConstraintLayout:</b>
 </br>  
-  a. <b>a. <b>layout_constraintEnd_toEndOf</b> — The end of the widget will be aligned to the end of the parent view.</br>
+  a. <b>layout_constraintEnd_toEndOf</b> — The end of the widget will be aligned to the end of the parent view.</br>
   b. <b>layout_constraintStart_toStartOf</b> — The start of the widget will be aligned to the start of the parent view.</br>
   c. <b>layout_constraintTop_toTopOf</b> — The top of the widget will be aligned to the top of the parent view.</br>
   d. <b>layout_constraintTop_toBottomOf</b> — The top of the widget will be aligned to the bottom of the parent view.</br>
   e. <b>layout_constraintBottom_toTopOf</b> — The bottom of the widget will be aligned to the top of the parent view.</br>
-  f. <b>layout_constraintBottom_toBottomOf</b> — The bottom of the widget will be aligned to the bottom of the parent view </br>
+  f. <b>layout_constraintBottom_toBottomOf</b> — The bottom of the widget will be aligned to the bottom of the parent view. </br>
   g. <b>layout_constraintLeft_toTopOf</b> — The left of the widget will be aligned to the top of the parent view.</br>
   h. <b>layout_constraintLeft_toBottomOf</b> — The left of the widget will be aligned to the bottom of the parent view.</br>
   i. <b>layout_constraintLeft_toLeftOf</b> — The left of the widget will be aligned to the left of the parent view.</br>
@@ -45,7 +45,7 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
   l. <b>layout_constraintRight_toBottomOf</b> — The right of the widget will be aligned to the bottom of the parent view.</br>
   m. <b>layout_constraintRight_toLeftOf</b> — The right of the widget will be aligned to the left of the parent view.</br>
   n. <b>layout_constraintRight_toRightOf</b> — The right of the widget will be aligned to the right of the parent view.</br>  
-<h4>Note: Within a ConstraintLayout, side margins for a child view will only take effect if that side is constrained to another view.  </h4>
+<h4>Note: Within a ConstraintLayout, side margins for a child view will only take effect if that side is constrained to another view.</h4>
 
 
       <!-- From the below example you can see that if we need to add a textView below the ImageView, 
