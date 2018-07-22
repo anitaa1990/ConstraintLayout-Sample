@@ -94,16 +94,26 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
 </br> 
 
 <b>3. How to center a view vertically or horizontally?</b>
-</br> <b>Using Horizontal Bias:</b> This is to position a view along the horizontal axis using a bias value, this will be relative to it’s constrained position. For example: ``` app:layout_constraintHorizontal_bias="0.5" ``` will center a view horizontally.
-</br> <b>Using Vertical Bias:</b> This is to position a view along the vertical axis using a bias value, this will be relative to it’s constrained position. For example: ``` app:app:layout_constraintVertical_bias="0.5" ``` will center a view vertically.
+</br> <b>Using Horizontal Bias:</b> This means that the position of a view along the horizontal axis can be defined using a bias value. For example: ``` app:layout_constraintHorizontal_bias="0.5" ``` will center a view horizontally.
+</br> <b>Using Vertical Bias:</b> This means that the position of a view along the vertical axis can be defined using a bias value. For example: ``` app:layout_constraintVertical_bias="0.5" ``` will center a view vertically.
 </br></br>
 
 
 <b>4. How to resize a view?</b>
-</br> Using ```app:layout_constraintWidth_default="wrap" (with width set to 0dp)```
-.If set, the widget will have the same size as if using wrap_content, but will be limited by constraints (i.e. it won't expand beyond them) 
-
+</br> Using ```app:layout_constrainedHeight="true"```
+This will wrap the CardView height according to its contents.
+</br> Using ```app:layout_constrainedWidth="true"```
+This will wrap the CardView width according to its contents.
 </br>
+
+You can checkout some of the other constraints we have not looked at in this article.</br>
+* [Chains](https://developer.android.com/reference/android/support/constraint/ConstraintLayout#Chains)
+* [Guideline](https://developer.android.com/reference/android/support/constraint/Guideline)
+* [Dimension Constraints](https://developer.android.com/reference/android/support/constraint/ConstraintLayout#DimensionConstraints)
+* [Circular Positioning](https://developer.android.com/reference/android/support/constraint/ConstraintLayout#CircularPositioning)
+* [Visibility Behaviour](https://developer.android.com/reference/android/support/constraint/ConstraintLayout#VisibilityBehavior)
+
+
 
 
 
