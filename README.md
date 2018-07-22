@@ -3,11 +3,12 @@
 
 A demo app to showcase constraint layout implementation in Android
 
-Please checkout the medium article [here](https://medium.com/@anitaa_1990/learning-to-implement-constraintlayout-in-android-8ddc69fe0a1a) for a detailed explanation.
-
-<h3>Build a Responsive UI with ConstraintLayout</h3>
+Please checkout the medium article [here](https://medium.com/@anitaa_1990/learning-to-implement-constraintlayout-in-android-8ddc69fe0a1a) for a detailed explanation on how to build the above user interface.
 
 <img src="https://github.com/anitaa1990/ConstraintLayout-Sample/blob/new_changes/media/demo.gif" width="300" style="max-width:100%;"></br></br>
+
+
+<h3>Some of the common concepts in ConstraintLayout</h3>
 
 <b>1. How to set Aspect Ratio:</b>
 
@@ -28,18 +29,22 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
 ```
 </br>  
 
-<b>2. Some commonly used attributes if ConstraintLayout:</b>
-</br>  a. <b>layout_constraintTop_toTopOf</b> — Align the top of the desired view to the top of another.</br>
-  b. <b>layout_constraintTop_toBottomOf</b> — Align the top of the desired view to the bottom of another</br>
-  c. <b>layout_constraintBottom_toTopOf</b> — Align the bottom of the desired view to the top of another.</br>
-  d. <b>layout_constraintBottom_toBottomOf</b> — Align the bottom of the desired view to the bottom of another.</br>
-  e. <b>layout_constraintLeft_toTopOf</b> — Align the left of the desired view to the top of another.</br>
-  f. <b>layout_constraintLeft_toBottomOf</b> — Align the left of the desired view to the bottom of another.</br>
-  g. <b>layout_constraintLeft_toLeftOf</b> — Align the left of the desired view to the right of another.</br>
-  h. <b>layout_constraintRight_toTopOf</b> — Align the right of the desired view to the top of another.</br>
-  i. <b>layout_constraintRight_toBottomOf</b> — Align the right of the desired view to the bottom of another.</br>
-  j. <b>layout_constraintRight_toLeftOf</b> — Align the right of the desired view to the left of another.</br>
-  k. <b>layout_constraintRight_toRightOf</b> — Align the right of the desired view to the right of another.</br>  
+<b>2. Some commonly used attributes in ConstraintLayout:</b>
+</br>  
+  a. <b>a. <b>layout_constraintEnd_toEndOf</b> — The end of the widget will be aligned to the end of the parent view.</br>
+  b. <b>layout_constraintStart_toStartOf</b> — The start of the widget will be aligned to the start of the parent view.</br>
+  c. <b>layout_constraintTop_toTopOf</b> — The top of the widget will be aligned to the top of the parent view.</br>
+  d. <b>layout_constraintTop_toBottomOf</b> — The top of the widget will be aligned to the bottom of the parent view.</br>
+  e. <b>layout_constraintBottom_toTopOf</b> — The bottom of the widget will be aligned to the top of the parent view.</br>
+  f. <b>layout_constraintBottom_toBottomOf</b> — The bottom of the widget will be aligned to the bottom of the parent view </br>
+  g. <b>layout_constraintLeft_toTopOf</b> — The left of the widget will be aligned to the top of the parent view.</br>
+  h. <b>layout_constraintLeft_toBottomOf</b> — The left of the widget will be aligned to the bottom of the parent view.</br>
+  i. <b>layout_constraintLeft_toLeftOf</b> — The left of the widget will be aligned to the left of the parent view.</br>
+  j. <b>layout_constraintLeft_toRightOf</b> — The left of the widget will be aligned to the right of the parent view.</br>
+  k. <b>layout_constraintRight_toTopOf</b> — The right of the widget will be aligned to the top of the parent view.</br>
+  l. <b>layout_constraintRight_toBottomOf</b> — The right of the widget will be aligned to the bottom of the parent view.</br>
+  m. <b>layout_constraintRight_toLeftOf</b> — The right of the widget will be aligned to the left of the parent view.</br>
+  n. <b>layout_constraintRight_toRightOf</b> — The right of the widget will be aligned to the right of the parent view.</br>  
 <h4>Note: Within a ConstraintLayout, side margins for a child view will only take effect if that side is constrained to another view.  </h4>
 
 
