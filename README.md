@@ -3,6 +3,8 @@
 
 A demo app to showcase constraint layout implementation in Android
 
+Please checkout the medium article [here](https://medium.com/@anitaa_1990/learning-to-implement-constraintlayout-in-android-8ddc69fe0a1a) for a detailed explanation.
+
 <h3>Build a Responsive UI with ConstraintLayout</h3>
 
 <img src="https://github.com/anitaa1990/ConstraintLayout-Sample/blob/new_changes/media/demo.gif" width="300" style="max-width:100%;"></br></br>
@@ -97,8 +99,6 @@ H,3:1 will always make the ImageView appear 3 times wider than height. The prefi
 .If set, the widget will have the same size as if using wrap_content, but will be limited by constraints (i.e. it won't expand beyond them) 
 
 </br>
-
-All of the above steps can be found in the article [here](https://medium.com/@anitaa_1990/learning-to-implement-constraintlayout-in-android-8ddc69fe0a1a)
 
 
 
