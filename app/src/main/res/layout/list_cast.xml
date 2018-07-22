@@ -7,6 +7,8 @@
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/padding_xxxlarge">
 
+      <!-- I have used the ExpandableLayout from https://github.com/cachapa/ExpandableLayout
+           to expand and collapse this layout.  -->
         <com.an.constraintlayout.sample.views.expandablelayout.ExpandableLayout
             android:id="@+id/expandable_layout"
             android:layout_width="match_parent"

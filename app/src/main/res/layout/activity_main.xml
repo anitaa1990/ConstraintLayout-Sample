@@ -10,7 +10,13 @@
     </data>
 
 
-    <!--- Step 1: Add a nestedScrollView to the layout -->
+    <!--- Step 1: Add a nestedScrollView to the layout.
+          Please note that I am using the latest version of  AndroidX library
+          which means that the package name for NestedScrollView will be
+          "androidx.core.widget.NestedScrollView".
+
+          If you are using older support libraries, please change this to
+          "android.support.v4.widget.NestedScrollView"  -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,9 +49,11 @@
 
 
 
-            <!--- Step 4: The recyclerView would be defined with left & right constraints
-                  equal to the parent & the top and end constraints of the recyclerView
-                  would adhere to the Guideline we have defined.  -->
+            <!--- Step 4: The recyclerView would be defined with left, right and top constraints
+                  equal to the parent. We have defined a margin of around 145dp to the top
+                  of the recyclerView. We could define this using Guideline (but evidently
+                  Guideline works only when a fixed height layout can be defined so going with
+                  marginTop. -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_videos"
                 android:layout_width="match_parent"
@@ -61,6 +69,7 @@
                   defined to wrap according to its content. It will have constraints
                   such that it will be displayed below the RecyclerView and adhere
                   left of the parent  -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/movie_detail_card"
                 android:layout_width="match_parent"
